@@ -215,6 +215,21 @@ app.post('/proxy-request', async (req, res) => {
   }
 });
 
+// Endpoint: Debug Reset (Factory Reset)
+app.get('/debug/reset', (req, res) => {
+  try {
+    db.exec('DELETE FROM transactions');
+    db.exec('DELETE FROM services');
+    // Consider also resetting sequences if needed: db.exec("DELETE FROM sqlite_sequence WHERE name='services' OR name='transactions'");
+
+    console.log('Database reset triggered by user.');
+    res.json({ message: 'Factory reset successful. All data cleared.' });
+  } catch (error) {
+    console.error('Database reset error:', error);
+    res.status(500).json({ error: 'Failed to reset database' });
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
   console.log('Connected to Sepolia via publicnode');

@@ -164,6 +164,23 @@ function App() {
         </div>
 
       </div>
+
+      <footer className="hermes-footer">
+        <div className="footer-status">SYSTEM STATUS: OPERATIONAL | PORT: 3000</div>
+        <button className="reset-btn" onClick={async () => {
+          if (confirm('WARNING: This will wipe all registered agents and transaction history. Continue?')) {
+            try {
+              await axios.get('http://localhost:3000/debug/reset');
+              fetchData(); // Refresh immediately
+            } catch (e) {
+              console.error(e);
+              alert('Reset failed');
+            }
+          }
+        }}>
+          ⚠ FACTORY RESET
+        </button>
+      </footer>
     </div>
   );
 }
