@@ -39,7 +39,7 @@ async function main() {
         console.log(`Target Address: ${targetService.wallet_address}`);
 
         // 3. Dynamic Payment (ERC-20)
-        const TOKEN_ADDRESS = '0x6027Ad2bB75BD56B9E5B95A1348B146Ef41bF74e';
+        const TOKEN_ADDRESS = '0x8ccedbAe4916b79da7F3F612EfB2EB93A2bFD6cF';
         const abi = ["function transfer(address to, uint256 amount) returns (bool)"];
         const contract = new ethers.Contract(TOKEN_ADDRESS, abi, wallet);
 

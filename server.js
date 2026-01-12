@@ -44,7 +44,7 @@ async function verifyPayment(txHash, recipient, amount) {
     // using a public Sepolia RPC
     const provider = new ethers.JsonRpcProvider('https://ethereum-sepolia-rpc.publicnode.com');
     // Token Address for MockMNEE
-    const TOKEN_ADDRESS = '0x6027Ad2bB75BD56B9E5B95A1348B146Ef41bF74e';
+    const TOKEN_ADDRESS = '0x8ccedbAe4916b79da7F3F612EfB2EB93A2bFD6cF';
 
     // Get transaction receipt to ensure it is mined/confirmed
     const receipt = await provider.getTransactionReceipt(txHash);
