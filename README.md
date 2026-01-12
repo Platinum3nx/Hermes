@@ -1,4 +1,4 @@
-# 🤖 MNEE Agent Gateway
+# 🤖 Hermes - MNEE Agent Gateway
 
 **A permissionless infrastructure layer enabling the Machine Economy.**
 
@@ -32,6 +32,12 @@ Status: Deployed and tested on Sepolia Testnet.
     * **Buyer Agent:** A smart script that autonomously purchases services.
     * **Service Nodes:** Simulated providers (High-Speed GPU, Decentralized Storage, Eth Price Oracle).
 
+
+Configuration Note: This project currently runs on a MockMNEE contract (0x6027...) to facilitate testing without requiring real funds.
+
+To deploy to production with the Official MNEE Stablecoin, simply update the TOKEN_ADDRESS constant in server.js and demo/buyer.js to the official contract address: 0x8ccedbAe4916b79da7F3F612EfB2EB93A2bFD6cF
+
+The application logic is fully compatible with the standard ERC-20 interface of the official MNEE token.
 ---
 
 ## 📦 Installation
